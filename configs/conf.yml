@@ -1,0 +1,19 @@
+name: "gateway"
+mode: "debug"
+time_location: "Asia/Shanghai"
+addr: ":8080"
+config_path: "gateway"
+
+consul:
+  host: "localhost"
+  port: 8500
+
+routes:
+  -
+    path: "/api/video_server/*action"
+    scheme: "http"
+    host: "localhost:8081"
+  -
+    path: "/api/twitta/*action"
+    scheme: "http"
+    host: "localhost:6565"
